@@ -5,9 +5,16 @@ module.exports = {
     await queryInterface.createTable('Users', {
       id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
+      },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      lastname: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       username: {
         type: Sequelize.STRING,
@@ -16,7 +23,6 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
       },
       password: {
         type: Sequelize.STRING,
@@ -37,5 +43,3 @@ module.exports = {
     await queryInterface.dropTable('Users');
   },
 };
-
-
